@@ -11,5 +11,13 @@ public class Account {
         balance += amount;
 
     }
+
+    public void withdraw(int amount) {
+        throw new RuntimeException("Cannot withdrow");
+    }
+
+    public static Account emptyAccount() {
+       return new Account();
+    }
 }
 
