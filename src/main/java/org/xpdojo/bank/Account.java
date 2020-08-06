@@ -7,17 +7,21 @@ public class Account {
         return balance;
     }
 
-    public void deposit(int amount ){
+    public void deposit(int amount) {
         balance += amount;
 
     }
 
-    public void withdraw(int amount) {
-        throw new RuntimeException("Cannot withdrow");
+    public int withdraw(int amount) {
+        if (amount > balance) {
+            throw new RuntimeException("Cannot withdraw. The amount is gt than balance.");
+        }else{
+             return balance - amount;
+        }
     }
 
     public static Account emptyAccount() {
-       return new Account();
+        return new Account();
     }
 }
 

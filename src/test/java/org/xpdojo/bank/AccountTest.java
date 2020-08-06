@@ -31,6 +31,18 @@ public class AccountTest {
     public void withdrawalFromEmptyAccountShouldNotBeAllowed() {
         try {
             Account.emptyAccount().withdraw(1);
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    @Test
+    public void withdrawalFromAFullAccount() {
+        account.deposit(10);
+        try {
+            account.withdraw(1);
+
         } catch (Exception e) {
 
         }
